@@ -1,20 +1,17 @@
 package com.zmints.photoalbum.service
 
-import com.fasterxml.jackson.annotation.JsonProperty
 import com.zmints.photoalbum.model.Album
 import com.zmints.photoalbum.repository.PhotoAlbumRepository
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.springframework.beans.factory.annotation.Autowired
 
 import static org.mockito.Mockito.mock
-import static org.mockito.Mockito.never
-import static org.mockito.Mockito.verify
 import static org.mockito.Mockito.when
 
 class PhotoAlbumServiceTest {
     PhotoAlbumRepository repository
     PhotoAlbumService service
+
     @BeforeEach
     void setUp() {
         repository = mock(PhotoAlbumRepository)
@@ -25,7 +22,7 @@ class PhotoAlbumServiceTest {
     @Test
     void listByAlbumId() {
         Album album1 = new Album(albumId: 1, id: 1, title: "some title",
-                url: "/some/url", thumbnailUrl:"/thumbnail/url" )
+                url: "/some/url", thumbnailUrl: "/thumbnail/url")
 
         when(repository.findById(1)).thenReturn([album1])
 
