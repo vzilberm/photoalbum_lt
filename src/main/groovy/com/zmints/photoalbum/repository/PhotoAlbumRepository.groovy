@@ -15,7 +15,6 @@ class PhotoAlbumRepository {
 
     List<Album> findAll() {
         try {
-
             HttpResponse<JsonNode> jsonResponse =
                     Unirest.get("https://jsonplaceholder.typicode.com/photos")
                             .header("accept", "application/json")
@@ -29,7 +28,7 @@ class PhotoAlbumRepository {
             log.info("Something went wrong", e)
         }
 
-        return null
+        null
     }
 
     List<Album> findById(Integer id) {
@@ -43,10 +42,9 @@ class PhotoAlbumRepository {
             ObjectMapper objectMapper = new ObjectMapper()
             return objectMapper.readValue(result.toString(), new TypeReference<List<Album>>() {})
         } catch (Exception e) {
-            System.out.println("Some Error Has Occured");
-            e.printStackTrace();
+            log.info("Something went wrong", e)
         }
 
-        return null;
+        null
     }
 }

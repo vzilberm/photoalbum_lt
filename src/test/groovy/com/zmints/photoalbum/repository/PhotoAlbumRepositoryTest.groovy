@@ -3,7 +3,7 @@ package com.zmints.photoalbum.repository
 import com.zmints.photoalbum.model.Album
 import org.junit.Before
 import org.junit.Test
-import org.springframework.beans.factory.annotation.Autowired
+
 
 class PhotoAlbumRepositoryTest {
     PhotoAlbumRepository repository
